@@ -16,7 +16,11 @@ export class LoginComponent {
 
   login() {
     if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/protected']);
+      if (this.authService.isAdminLoggedIn()) {
+        this.router.navigate(['/admin-dashboard']);
+      } else {
+        this.router.navigate(['/protected']);
+      }
     } else {
       this.errorMessage = 'Invalid username or password';
     }
