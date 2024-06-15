@@ -2,4 +2,29 @@
   <h2>User Dashboard</h2>
   <p>Welcome to the user dashboard. Only authenticated users can see this.</p>
   <button (click)="logout()">Logout</button>
+
+  <form (ngSubmit)="registerComplaint()">
+    <div>
+      <label for="title">Title</label>
+      <input id="title" [(ngModel)]="complaint.title" name="title" required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" [(ngModel)]="complaint.description" name="description" required></textarea>
+    </div>
+    <button type="submit">Submit Complaint</button>
+  </form>
+
+  <div class="complaints-container" *ngIf="complaints.length > 0">
+    <h3>Your Complaints</h3>
+    <div *ngFor="let complaint of complaints" class="complaint-item">
+      <h4>{{ complaint.title }}</h4>
+      <p>{{ complaint.description }}</p>
+      <p>Status: {{ complaint.status }}</p>
+      <p *ngIf="complaint.remark">Remark: {{ complaint.remark }}</p>
+    </div>
+  </div>
+  <div *ngIf="complaints.length === 0">
+    <p>No complaints to show.</p>
+  </div>
 </div>

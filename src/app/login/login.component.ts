@@ -8,21 +8,21 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username = '';
-  password = '';
-  errorMessage = '';
+  username: string = '';
+  password: string = '';
+  errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
+  login(): void {
     if (this.authService.login(this.username, this.password)) {
-      if (this.authService.isAdminLoggedIn()) {
+      if (this.authService.getAdminStatus()) {
         this.router.navigate(['/admin-dashboard']);
       } else {
-        this.router.navigate(['/protected']);
+        this.router.navigate(['/user-dashboard']);
       }
     } else {
-      this.errorMessage = 'Invalid username or password';
+      this.errorMessage = 'Invalid credentials';
     }
   }
 }

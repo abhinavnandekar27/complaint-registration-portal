@@ -1,6 +1,21 @@
 <div class="admin-container">
-    <h2>Admin Dashboard</h2>
-    <p>Welcome to the admin dashboard. Only authenticated admins can see this.</p>
-    <button (click)="logout()">Logout</button>
-  </div>
+  <h2>Admin Dashboard</h2>
+  <p>Welcome to the admin dashboard. Only authenticated admins can see this.</p>
+  <button (click)="logout()">Logout</button>
   
+  <div class="complaints-container" *ngIf="complaints.length > 0">
+    <h3>Complaints</h3>
+    <div *ngFor="let complaint of complaints" class="complaint-item">
+      <h4>{{ complaint.title }}</h4>
+      <p>{{ complaint.description }}</p>
+      <p>Status: {{ complaint.status }}</p>
+      <div class="button-group">
+        <button (click)="updateStatus(complaint.id, 'In Progress')">Mark as In Progress</button>
+        <button (click)="updateStatus(complaint.id, 'Resolved')">Mark as Resolved</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="complaints.length === 0">
+    <p>No complaints to show.</p>
+  </div>
+</div>

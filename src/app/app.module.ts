@@ -8,8 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { ProtectedComponent } from './protected/protected.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AuthService } from './auth.service';
-import { AuthGuard } from './auth.guard';
-import { AdminGuard } from './admin.guard';
+import { ComplaintService } from './complaint.service';
+import { AuthGuard, AdminGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { AdminGuard } from './admin.guard';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService, AuthGuard, AdminGuard],
+  providers: [AuthService, ComplaintService, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

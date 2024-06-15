@@ -11,11 +11,11 @@ export class AuthService {
   constructor(private router: Router) { }
 
   login(username: string, password: string): boolean {
-    if (username === 'abhinavuser' && password === 'abhinavuser') {
+    if (username === 'user' && password === 'user') {
       this.loggedIn = true;
       this.isAdmin = false;
       return true;
-    } else if (username === 'abhinavadmin' && password === 'abhinavadmin') {
+    } else if (username === 'admin' && password === 'admin') {
       this.loggedIn = true;
       this.isAdmin = true;
       return true;
@@ -23,7 +23,7 @@ export class AuthService {
     return false;
   }
 
-  logout() {
+  logout(): void {
     this.loggedIn = false;
     this.isAdmin = false;
     this.router.navigate(['/login']);
@@ -33,7 +33,7 @@ export class AuthService {
     return this.loggedIn;
   }
 
-  isAdminLoggedIn(): boolean {
-    return this.loggedIn && this.isAdmin;
+  getAdminStatus(): boolean {
+    return this.isAdmin;
   }
 }
