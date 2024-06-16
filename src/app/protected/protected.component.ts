@@ -14,7 +14,6 @@ export class ProtectedComponent implements OnInit {
     title: '',
     description: '',
     status: '',
-    remark: ''
   };
   complaints: Complaint[] = [];
 
@@ -26,7 +25,7 @@ export class ProtectedComponent implements OnInit {
 
   registerComplaint() {
     this.complaintService.registerComplaint(this.complaint);
-    this.complaint = { id: 0, title: '', description: '', status: '', remark: '' }; // Reset the form
+    this.complaint = { id: 0, title: '', description: '', status: '' }; // Reset the form
     this.complaints = this.complaintService.getComplaints(); // Refresh the list
   }
 

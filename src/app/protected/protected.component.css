@@ -1,63 +1,100 @@
 .protected-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
 }
 
-h2 {
+.submit-complaint {
+  width: 40%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-complaint h2 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
 }
 
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
+.submit-complaint form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-complaint label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.submit-complaint input, .submit-complaint textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.submit-complaint button {
+  padding: 12px 20px;
   background-color: #3498db;
   border: none;
   border-radius: 5px;
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.submit-complaint button:hover {
   background-color: #2980b9;
 }
 
-form div {
-  margin-bottom: 15px;
+.complaints-container {
+  width: 60%;
+  padding: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+.complaints-container h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.complaint-table {
+  overflow-x: auto;
+}
+
+.complaint-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.complaint-table th, .complaint-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.complaint-table th {
+  background-color: #f2f2f2;
+  color: #333;
   font-weight: bold;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
+.complaint-table td {
+  color: #555;
 }
 
-.complaints-container {
-  text-align: left;
-  margin-top: 20px;
+.complaint-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-.complaint-item {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
+.complaint-table tr:hover {
+  background-color: #f0f0f0;
 }

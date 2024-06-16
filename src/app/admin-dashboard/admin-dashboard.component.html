@@ -5,15 +5,30 @@
   
   <div class="complaints-container" *ngIf="complaints.length > 0">
     <h3>Complaints</h3>
-    <div *ngFor="let complaint of complaints" class="complaint-item">
-      <h4>{{ complaint.title }}</h4>
-      <p>{{ complaint.description }}</p>
-      <p>Status: {{ complaint.status }}</p>
-      <div class="button-group">
-        <button (click)="updateStatus(complaint.id, 'In Progress')">Mark as In Progress</button>
-        <button (click)="updateStatus(complaint.id, 'Resolved')">Mark as Resolved</button>
-      </div>
-    </div>
+    <table class="complaint-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let complaint of complaints" class="complaint-item">
+          <td>{{ complaint.title }}</td>
+          <td>{{ complaint.description }}</td>
+          <td>{{ complaint.status }}</td>
+          <td>
+            <div class="button-group">
+              <button (click)="updateStatus(complaint.id, 'In Progress')">In Progress</button>
+              <button (click)="updateStatus(complaint.id, 'Resolved')">Resolved</button>
+              <button (click)="deleteComplaint(complaint.id)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div *ngIf="complaints.length === 0">
     <p>No complaints to show.</p>

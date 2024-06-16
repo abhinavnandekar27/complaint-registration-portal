@@ -1,24 +1,20 @@
 .admin-container {
   max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h2 {
-  margin-bottom: 20px;
+.admin-container h2 {
   font-size: 24px;
   color: #333;
 }
 
-button {
-  margin-top: 10px;
-  margin-left: 5px; /* Adjust the spacing between buttons */
+.admin-container p {
+  font-size: 16px;
+  color: #555;
+}
+
+.admin-container button {
   padding: 10px 20px;
   background-color: #3498db;
   border: none;
@@ -26,28 +22,56 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.admin-container button:hover {
   background-color: #2980b9;
 }
 
 .complaints-container {
-  text-align: left;
   margin-top: 20px;
 }
 
-.complaint-item {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
+.complaints-container h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.complaint-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.complaint-table th, .complaint-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.complaint-table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.complaint-table td {
+  color: #555;
+}
+
+.complaint-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.complaint-table tr:hover {
+  background-color: #f0f0f0;
 }
 
 .button-group {
-  display: inline-block; /* Ensure buttons are displayed inline */
+  display: flex;
 }
 
-p {
-  margin: 10px 0; /* Add some margin around the paragraph */
+.button-group button {
+  margin-right: 10px;
 }

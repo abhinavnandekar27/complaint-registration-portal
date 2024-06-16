@@ -13,8 +13,14 @@ export class ComplaintService {
     // Load complaints from local storage on service initialization
     const storedComplaints = localStorage.getItem(this.STORAGE_KEY);
     if (storedComplaints) {
-      this.complaints = JSON.parse(storedComplaints);
-      this.nextId = this.complaints.reduce((maxId, complaint) => Math.max(maxId, complaint.id), 0) + 1;
+      try {
+        this.complaints = JSON.parse(storedComplaints);
+        this.nextId = this.complaints.reduce((maxId, complaint) => Math.max(maxId, complaint.id), 0) + 1;
+      } catch (error) {
+        console.error('Error parsing stored complaints:', error);
+        // Clear invalid stored data
+        localStorage.removeItem(this.STORAGE_KEY);
+      }
     }
   }
 
@@ -40,6 +46,18 @@ export class ComplaintService {
       complaint.status = status;
       complaint.remark = remark;
       this.saveToLocalStorage();
+    } else {
+      console.error('Complaint not found:', id);
+    }
+  }
+
+  deleteComplaint(id: number): void {
+    const index = this.complaints.findIndex(c => c.id === id);
+    if (index !== -1) {
+      this.complaints.splice(index, 1);
+      this.saveToLocalStorage();
+    } else {
+      console.error('Complaint not found:', id);
     }
   }
 }

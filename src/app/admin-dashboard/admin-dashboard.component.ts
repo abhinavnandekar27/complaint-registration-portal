@@ -23,6 +23,12 @@ export class AdminDashboardComponent implements OnInit {
     this.remark = ''; // Clear the remark after updating
   }
 
+  deleteComplaint(id: number) {
+    this.complaintService.deleteComplaint(id);
+    // After deleting, refresh the complaints list
+    this.complaints = this.complaintService.getComplaints();
+  }
+
   logout() {
     this.authService.logout();
   }
