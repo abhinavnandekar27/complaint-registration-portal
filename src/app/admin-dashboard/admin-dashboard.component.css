@@ -1,5 +1,5 @@
 .admin-container {
-  max-width: 800px;
+  max-width: 1000px; /* Increased the max-width for more space */
   margin: 0 auto;
   padding: 20px;
 }
@@ -45,7 +45,7 @@
 }
 
 .complaint-table th, .complaint-table td {
-  padding: 12px;
+  padding: 20px; /* Increased padding for more space */
   border: 1px solid #ddd;
   text-align: left;
 }
@@ -70,8 +70,10 @@
 
 .button-group {
   display: flex;
+  gap: 10px; /* Add space between buttons */
 }
 
 .button-group button {
-  margin-right: 10px;
+  padding: 10px 10px; /* Increased padding for larger buttons */
+  margin-right: 0; /* Remove margin-right as gap will handle spacing */
 }
