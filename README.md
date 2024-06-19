@@ -34,14 +34,20 @@ The Complaint Registration Portal is an Angular-based web application that allow
 ## Installation
 
 1. Clone the repository:
-    git clone https://github.com/yourusername/complaint-registration-portal.git
+    ```bash
+    git clone https://github.com/abhinavnandekar27/complaint-registration-portal.git
     cd complaint-registration-portal
+    ```
 
 2. Install dependencies:
+    ```bash
     npm install
+    ```
 
 3. Run the application:
-    ng serve -open
+    ```bash
+    ng serve --open
+    ```
 
 4. Open your browser and navigate to `http://localhost:4200`.
 
