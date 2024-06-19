@@ -1,27 +1,53 @@
-# LoginApp
+# Complaint Registration Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+## Overview
+The Complaint Registration Portal is an Angular-based web application that allows users to register complaints and enables an admin to manage and resolve these complaints. The application supports user authentication, complaint registration, and admin management functionalities.
 
-## Development server
+## Features
+- **User Authentication**: Users can register, log in, and log out.
+- **Complaint Registration**: Users can register complaints, which include a title and description.
+- **Admin Dashboard**: Admin can view, update the status of, and delete complaints.
+- **Local Storage**: Data persistence using local storage to maintain user sessions and complaint data.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Local Storage (to store complaints)
 
-## Code scaffolding
+### Login User
+1. Log in as an normal user (default user credentials: username `user`, password `user`).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Submitting a Complaint
+1. After logging in, navigate to the dashboard.
+2. Fill in the complaint title and description.
+3. Click on the `Submit Complaint` button.
+4. View submitted complaints in the table.
 
-## Build
+### Admin Management
+1. Log in as an admin (default admin credentials: username `admin`, password `admin`).
+2. Navigate to the admin dashboard.
+3. View all complaints in a table format.
+4. Update the status of complaints or delete complaints as needed.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. Clone the repository:
+    git clone https://github.com/yourusername/complaint-registration-portal.git
+    cd complaint-registration-portal
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Install dependencies:
+    npm install
 
-## Running end-to-end tests
+3. Run the application:
+    ng serve -open
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Open your browser and navigate to `http://localhost:4200`.
 
-## Further help
+## Output
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot (33)](https://github.com/abhinavnandekar27/complaint-registration-portal/assets/167284154/6b4e63a2-d36a-4ce3-b52e-38f870191a69)
+![Screenshot (35)](https://github.com/abhinavnandekar27/complaint-registration-portal/assets/167284154/c8370d07-081f-4db6-876e-d15bbd1d1951)
+![Screenshot (36)](https://github.com/abhinavnandekar27/complaint-registration-portal/assets/167284154/03046c50-aedd-4ed7-802c-adb0238a2d9b)
+![Screenshot (37)](https://github.com/abhinavnandekar27/complaint-registration-portal/assets/167284154/2c128de7-26fe-4820-9055-8872a800ff97)
