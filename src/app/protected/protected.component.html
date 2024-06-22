@@ -42,4 +42,18 @@
       <p>No complaints to show.</p>
     </div>
   </div>
+
+  <div class="notifications-container">
+    <h3>Notifications</h3>
+    <div *ngIf="notifications.length > 0">
+      <ul>
+        <li *ngFor="let notification of notifications">
+          {{ notification }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="notifications.length === 0">
+      <p>No new notifications.</p>
+    </div>
+  </div>
 </div>

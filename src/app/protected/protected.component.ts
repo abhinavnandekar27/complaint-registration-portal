@@ -16,17 +16,20 @@ export class ProtectedComponent implements OnInit {
     status: '',
   };
   complaints: Complaint[] = [];
+  notifications: string[] = [];
 
   constructor(private authService: AuthService, private complaintService: ComplaintService) {}
 
   ngOnInit() {
     this.complaints = this.complaintService.getComplaints();
+    this.notifications = this.complaintService.getNotifications();
   }
 
   registerComplaint() {
     this.complaintService.registerComplaint(this.complaint);
     this.complaint = { id: 0, title: '', description: '', status: '' }; // Reset the form
     this.complaints = this.complaintService.getComplaints(); // Refresh the list
+    this.notifications = this.complaintService.getNotifications(); // Refresh notifications
   }
 
   logout() {
