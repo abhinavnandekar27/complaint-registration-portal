@@ -98,3 +98,68 @@
 .complaint-table tr:hover {
   background-color: #f0f0f0;
 }
+
+.notifications-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-container h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.notifications-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-container li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.notifications-container li:last-child {
+  border-bottom: none;
+}
+
+.notifications-container p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.notifications-container .empty-message {
+  font-style: italic;
+  color: #888;
+}
+
+.notifications-container .empty-message:before {
+  content: "🔔"; /* Add a bell icon before the message */
+  margin-right: 5px;
+}
+
+/* Button for showing notifications */
+.show-notifications-btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.show-notifications-btn:hover {
+  background-color: #2980b9;
+}
