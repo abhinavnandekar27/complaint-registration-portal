@@ -1,5 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-#api_key = "1234567890abcdef"
+api_key = "AKIAIOSFODNN7EXAMPLE"
 import { AppModule } from './app/app.module';
 
 
